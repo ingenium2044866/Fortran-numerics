@@ -4,18 +4,18 @@ module funktionen
 
     contains
 
-    double precision function DegToRad (Winkel)
-        double precision,intent(in) :: Winkel
-        DegToRad = pi * Winkel/180.0
+    real function DegToRad (Winkel)
+        real,intent(in) :: Winkel
+        DegToRad = pi * Winkel / 180.0
     end function
 
-    double precision function dphi(t,phi,omega)
-        double precision,intent(in)    :: t, phi, omega
+    real function dphi(omega)
+        real,intent(in)    :: omega
         dphi = omega
     end function
 
-    double precision function omegaAbleitung(Winkel)
-        double precision    :: Winkel, faktor
+    real function omegaAbleitung(Winkel)
+        real    :: Winkel, faktor
         faktor  = -g/l
         omegaAbleitung = faktor*sin(Winkel)
     end function
